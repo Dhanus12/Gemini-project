@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html, #root {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    padding: 10px;
+}
+
+.chat-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+/* Header 10% */
+.chat-header {
+    flex: 0 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4e54c8;
+    background-color: #f0f4ff;
+
+    /* Sticky behavior */
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensure it stays above chat messages */
+}
+
+
+/* Chat Box 70% */
+.chat-box {
+    flex: 0 0 70%;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9fb;
+}
+
+/* Response details under Chat Box 15% */
+.summary-box {
+    flex: 0 0 15%;
+    background-color: #f0f4ff;
+    border-top: 1px solid #ccc;
+    padding: 10px 15px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.message-wrapper {
+    margin-bottom: 10px;
+}
+
+.user-msg-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bot-msg-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 75%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-msg {
+    background-color: #4e54c8;
+    color: #fff;
+}
+
+.bot-msg {
+    background-color: #e0e7ff;
+    color: #333;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #f0f4ff;
+    flex: 0 0 auto;
+}
+
+.input-area input {
+    flex-grow: 1;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+}
+
+.input-area button {
+    border-radius: 10px;
+    background-color: #4e54c8;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/* Footer 5% */
+.footer {
+    flex: 0 0 5%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #4e54c8;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .chat-wrapper {
+        max-width: 100%;
+        height: 95vh;
+    }
+    .summary-box {
+        flex: 0 0 20%;
+    }
+}
